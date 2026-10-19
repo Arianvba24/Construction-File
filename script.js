@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+const archivo = window.location.pathname.split("/").pop();
+
+if (archivo === "index.html") {
+
 const wrap = document.querySelector(".wrap");
 const contador = wrap.children[2].children[0];
 
@@ -59,3 +63,72 @@ function contar() {
 }
 
 contar();
+
+
+}
+
+
+
+// const track = document.querySelector(".carousel-track");
+// const items = document.querySelectorAll(".carousel-item");
+
+// const nextBtn = document.getElementById("nextBtn");
+// const prevBtn = document.getElementById("prevBtn");
+
+// let currentIndex = 0;
+
+// function updateCarousel() {
+//     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+// }
+
+// nextBtn.addEventListener("click", () => {
+//     if (currentIndex < items.length - 1) {
+//         currentIndex++;
+//         updateCarousel();
+//     }
+// });
+
+// prevBtn.addEventListener("click", () => {
+//     if (currentIndex > 0) {
+//         currentIndex--;
+//         updateCarousel();
+//     }
+// });
+
+document.querySelectorAll(".carousel-track").forEach(track => {
+
+    const carousel = track.closest(".project-card");
+
+    const items = track.querySelectorAll(".project-media");
+
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        track.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+
+    });
+
+});
+
+
