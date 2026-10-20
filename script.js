@@ -69,32 +69,6 @@ contar();
 
 
 
-// const track = document.querySelector(".carousel-track");
-// const items = document.querySelectorAll(".carousel-item");
-
-// const nextBtn = document.getElementById("nextBtn");
-// const prevBtn = document.getElementById("prevBtn");
-
-// let currentIndex = 0;
-
-// function updateCarousel() {
-//     track.style.transform = `translateX(-${currentIndex * 100}%)`;
-// }
-
-// nextBtn.addEventListener("click", () => {
-//     if (currentIndex < items.length - 1) {
-//         currentIndex++;
-//         updateCarousel();
-//     }
-// });
-
-// prevBtn.addEventListener("click", () => {
-//     if (currentIndex > 0) {
-//         currentIndex--;
-//         updateCarousel();
-//     }
-// });
-
 document.querySelectorAll(".carousel-track").forEach(track => {
 
     const carousel = track.closest(".project-card");
